@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "Add Document";
+}
+
+@{
+<style>
+    body {
+        background: #333;
+    }
+
+    .form_bg {
+        background-color: #eee;
+        color: #666;
+        padding: 20px;
+        border-radius: 10px;
+        position: absolute;
+        border: 1px solid #fff;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 320px;
+        height: 480px;
+    }
+
+    .date-picker {
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+                transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    }
+    
+    .align-center {
+        text-align: center;
+    }
+</style>    
+<link href="@Url.Content("~/Content/themes/base/jquery-ui.min.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/jquery-3.2.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.12.1.min.js")"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.date-picker').datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+</script>
+
+    if (ViewBag.msg != null)
+    {
+        <script type="text/javascript">
+            alert('@ViewBag.msg');
+        </script>
+    }
+}
+@using (Html.BeginForm("AddDocument","Admin",FormMethod.Post))
+{
+    <div class="container">
+    <div class="row">
+        <div class="form_bg">
+            <form>
+                 <h2 class="text-center">Add Document</h2>
+                <br/>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="docTitle" id="docTitle" placeholder="Enter Document Title">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="date-picker" name="pdate" id="pdate" placeholder="Published On">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="publisherId" id="publisherId" placeholder="Enter Publisher Id">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="libId" id="libId" placeholder="Enter library Id">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="copyno" id="copyno" placeholder="Enter Copy no.">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="position" id="position" placeholder="Enter position">
+                </div>
+                <br/>
+                <div class="align-center">
+                    <button type="submit" class="btn btn-default" id="btnAddDoc">Add</button>
+                    @Html.ActionLink("Back", "Main", "Admin", new { @class = "btn btn-default" })
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    
+}

@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Average Fine";
+}
+<style>
+    body {
+        background: #333;
+    }
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        text-align:center;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+        
+    }
+
+    tr:nth-child(odd) {
+        background-color: white;
+        
+    }
+</style>
+<h2>Average Fine per Reader</h2>
+<table border="1">
+    <tr>
+        <th>Reader id</th>
+        <th>Reader Name</th>
+        <th>Avg. fine paid</th>
+    </tr>
+    @foreach (var row in Model.Rows)
+    {
+        <tr>
+            <td>@row["ReaderId"]</td>
+            <td>@row["ReaderName"]</td>
+            <td>@row["Avg Fine"]</td>
+        </tr>
+    }
+</table>
+

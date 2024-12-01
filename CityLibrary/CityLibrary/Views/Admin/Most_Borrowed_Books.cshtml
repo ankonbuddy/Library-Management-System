@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Most_Borrowed_Books";
+}
+
+<style>
+    body {
+        background: #333;
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        text-align: center;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    tr:nth-child(odd) {
+        background-color: white;
+    }
+</style>
+<h2>List of top 10 most borrowed books</h2>
+<table border="1">
+    <tr>
+        <th>Name of Book</th>
+        <th>No. of times borrowed</th>
+    </tr>
+    @foreach (var row in Model.Rows)
+    {
+        <tr>
+            <td>@row["Title"]</td>
+            <td>@row["Count"]</td>
+        </tr>
+    }
+</table>
+

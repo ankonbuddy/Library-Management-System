@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+}
+
+<style>
+    body {
+        background: #333;
+    }
+
+    .form_bg {
+        background-color: #eee;
+        color: #666;
+        padding: 20px;
+        border-radius: 10px;
+        position: absolute;
+        border: 1px solid #fff;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 320px;
+        height: 280px;
+    }
+
+    .align-center {
+        text-align: center;
+    }
+</style>
+
+    @using(Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+  <div class="container">
+    <div class="row">
+        <div class="form_bg">
+            <form>
+                 <h2 class="text-center">Admin Login</h2>
+                <br/>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="adminId" id="adminId" placeholder="User id">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="adminPass" id="adminPass" placeholder="Password">
+                </div>
+                <br/>
+                <div class="align-center">
+                    <button type="submit" class="btn btn-default" id="submitAdmin">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+           
+}
+    
+    
+
+
+

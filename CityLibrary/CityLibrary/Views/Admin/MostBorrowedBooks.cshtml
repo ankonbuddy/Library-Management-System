@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Most Borrowed Books";
+}
+<style>
+    body {
+        background: #333;
+    }
+
+    .form_bg {
+        background-color: #eee;
+        color: #666;
+        padding: 20px;
+        border-radius: 10px;
+        position: absolute;
+        border: 1px solid #fff;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 340px;
+        height: 250px;
+    }
+
+    .align-center {
+        text-align: center;
+    }
+</style>
+@using (Html.BeginForm("MostBorrowedBooks", "Admin", FormMethod.Post, new { target = "_blank" }))
+{
+    <div class="container">
+    <div class="row">
+        <div class="form_bg">
+            <form>
+                 <h2 class="text-center">Most Borrowed Books</h2>
+                <br/>                
+                <div class="form-group">
+                    <input type="text" class="form-control" name="libId" id="libId" placeholder="Enter branch id">                    
+                </div>                
+                <br/>
+                <div class="align-center">
+                    <button type="submit" class="btn btn-default" id="btnBranchInfo">Submit</button>
+                    @Html.ActionLink("Back", "Main", "Admin", new { @class = "btn btn-default" })
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>    
+}

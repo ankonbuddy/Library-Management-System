@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Documents From Publisher";
+}
+<style>
+    body {
+        background: #333;
+    }
+
+    .form_bg {
+        background-color: #eee;
+        color: #666;
+        padding: 20px;
+        border-radius: 10px;
+        position: absolute;
+        border: 1px solid #fff;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 320px;
+        height: 230px;
+    }
+
+    .align-center {
+        text-align: center;
+    }
+</style>
+
+@{
+    if (ViewBag.msg != null)
+    {
+        <script type="text/javascript">
+            alert('@ViewBag.msg');
+        </script>
+    }
+}
+@using (Html.BeginForm("DocumentsFromPublisher", "User", FormMethod.Post, new { target = "_blank"}))
+{
+    <div class="container">
+    <div class="row">
+        <div class="form_bg">
+            <form>
+                 <h2 class="text-center">Get documents</h2>
+                <br/>                              
+                <div class="form-group">
+                    <input type="text" class="form-control" name="pubName" id="pubName" placeholder="Enter publisher's name">
+                </div>                
+                <br/>
+                <div class="align-center">
+                    <button type="submit" class="btn btn-default" id="btnPub">Get</button>
+                    @Html.ActionLink("Back", "Main", "User", new { @class = "btn btn-default" })
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+  
+}
+

@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+<style>
+    body {
+        background: #333;
+    }
+
+    .user {
+        background: url("User.png");
+        display: block;
+        width: 500px;
+        height: 420px;
+        text-indent: -9999px;
+    }
+
+    .admin {
+        background: url("Admin.png");
+        display: block;
+        width: 500px;
+        height: 420px;
+        text-indent: -9999px;
+    }
+
+    .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .align-center {
+        text-align: center;
+    }
+</style>
+<div class="row">
+    <div class="column" style="background-color: #bbb;">
+        <div class="w3-card" style="width:50%">
+            @Html.ActionLink("I am a User", "Index", "User", null, new { @class = "user" })
+            <div class="w3-container">
+                <h4><b>User</b></h4>
+                @Html.ActionLink("I am a User", "Index", "User")
+            </div>
+        </div>
+    </div>
+    <div class="column" style="background-color: #bbb;">
+        <div class="w3-card" style="width:50%">
+            @Html.ActionLink("I am the Admin", "Index", "Admin", null, new { @class = "admin" })
+            <div class="w3-container">
+                <h4><b>Admin</b></h4>
+                @Html.ActionLink("I am the Admin", "Index", "Admin")
+            </div>
+        </div>
+    </div>
+</div>
+@*<div class="row">
+        <div class="column" style="background-color: #bbb;">
+            <h2>@Html.ActionLink("I am a User", "Index", "User", new { @class="user"})</h2>
+        </div>
+        <div class="column" style="background-color:#bbb;">
+            <h2>@Html.ActionLink("I am the admin", "Index", "Admin", new { @class = "admin" })</h2>
+        </div>
+    </div>*@
+@*<h2>Welcome to City Library</h2>
+        <div class="table-hover">
+            <table>
+                <tr>
+                    <td>@Html.ActionLink("I am a User", "Index", "User")</td>
+                </tr>
+                <tr>
+                    <td>@Html.ActionLink("I am the admin", "Index", "Admin")</td>
+                </tr>
+            </table>
+        </div>
+    </div>*@
+
+
+

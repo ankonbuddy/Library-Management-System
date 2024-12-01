@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "User Main Menu";
+}
+<style>
+    body {
+        background: #333;
+    }
+
+    .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+    }
+    
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .form_bg {
+        background-color: #eee;
+        color: #666;
+        padding: 20px;
+        border-radius: 10px;
+        position: absolute;
+        border: 1px solid #fff;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 320px;
+        height: 280px;
+    }
+
+    .align-center {
+        text-align: center;
+    }
+</style>
+<script>
+    
+    var elements = document.getElementsByClassName("column");
+    var i;
+
+    function gridView() {
+        for (i = 0; i < elements.length; i++) {
+            elements[i].style.width = "50%";
+        }
+    }
+</script>
+<div class="row">
+    <div class="column" style="background-color: #bbb;">
+        <h2>@Html.ActionLink("Search", "Search", "User")</h2>
+        <p>To find a book, Journal or Proceeding</p>
+    </div>
+    <div class="column" style="background-color:#bbb;">
+        <h2>@Html.ActionLink("Document checkout", "DocumentCheckout", "User")</h2>
+        <p>To check out a document</p>
+    </div>
+    <div class="column" style="background-color: #ccc;">
+        <h2>@Html.ActionLink("Document return", "DocumentReturn", "User")</h2>
+        <p>To return a borrowed document</p>
+    </div>
+    <div class="column" style="background-color: #ccc;">
+        <h2>@Html.ActionLink("Document reserve", "DocumentReserve", "User")</h2>
+        <p>To reserve a document</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column" style="background-color: #bbb;">
+        <h2>@Html.ActionLink("Fines Due", "FinesDue", "User")</h2>
+        <p>To know the current fine</p>
+    </div>
+    <div class="column" style="background-color: #bbb;">
+        <h2>@Html.ActionLink("Documents from publisher", "DocumentsFromPublisher", "User")</h2>
+        <p>To get a list of documents published by a publisher</p>
+    </div>
+    <div class="column" style="background-color: #ccc;">
+        <h2>@Html.ActionLink("Reserved Documents", "ReservedDocuments", "User")</h2>
+        <p>To see the list of reserved documents</p>
+    </div>
+    <div class="column" style="background-color: #ccc;">
+        <h2>@Html.ActionLink("Quit", "Index", "Home")</h2>
+        <p>To return to the main menu</p>
+    </div>
+</div>

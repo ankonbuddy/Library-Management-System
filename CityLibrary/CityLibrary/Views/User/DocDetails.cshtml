@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Document_Details";
+}
+<style>
+    body {
+        background: #333;
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        text-align: center;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    tr:nth-child(odd) {
+        background-color: white;
+    }
+</style>
+
+<h2>Document details</h2>
+<h6>Use this information to reserve the book:</h6>
+<table>
+    <tr>
+        <th>Document Id</th>
+        <th>Document Title</th>
+        <th>Publisher Name</th>
+        <th>Library Id</th>
+        <th>Branch Name</th>
+        <th>Copy no</th>
+    </tr>
+@{
+    foreach (var row in Model.Rows)
+    {
+        <tr>
+            <td>@row["DocId"]</td>
+            <td>@row["Title"]</td>
+            <td>@row["Pub_name"]</td>
+            <td>@row["LibId"]</td>
+            <td>@row["Name"]</td>
+            <td>@row["copyno"]</td>
+        </tr>
+    }
+}
+</table>

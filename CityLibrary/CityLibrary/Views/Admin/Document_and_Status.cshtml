@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Document_and_Status";
+}
+
+@Html.ActionLink("Return to main Menu for admin", "Main", "Admin")
+<h2>Document_and_Status</h2>
+<table cellpadding="0" cellspacing="0" border="1">
+    <tr>
+        <th>Document ID</th>
+        <th>Document Name </th>
+        <th>Published On</th>
+        <th>Publisher</th>
+        <th>Status</th>
+    </tr>
+    @foreach (System.Data.DataRow row in Model.Rows)
+    {
+        <tr>
+            <td>@row["DocId"]</td>
+            <td>@row["Title"]</td>
+            <td>@row["Pdate"]</td>
+            <td>@row["Pub_Name"]</td>
+            <td>@ViewBag.status</td>
+        </tr>
+    }
+</table>

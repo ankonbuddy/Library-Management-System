@@ -1,0 +1,17 @@
+DELETE FROM Writes
+DELETE FROM Borrows
+DELETE FROM Reserves
+DELETE FROM BOR_Transaction
+DELETE FROM Reservation
+DELETE FROM Copy
+DELETE FROM Guest_Editor
+DELETE FROM Proceedings
+DELETE FROM Journal_Issue
+DELETE FROM Journal_Volume
+DELETE FROM Chief_Editor
+DELETE FROM Book
+DELETE FROM Author
+DELETE FROM Branch
+DELETE FROM Reader
+DELETE FROM Document
+DELETE FROM Publisher
